@@ -28,6 +28,9 @@ except:
 
 try:
 	DATA = {}
+	head = "Name,Full name,Description,Location,Coordinates,URL,Version,DNSSEC validation,No logs,Namecoin,Resolver address,Provider name,Provider public key,Provider public key TXT record"
+	fp = open("d0wns.csv",'a')
+	fp.write(head)
 	with open('dns.txt', 'rb') as csvfile:
 		reader = csv.reader(csvfile, quotechar='"')
 		for row in reader:
@@ -57,7 +60,7 @@ try:
 			if len(provkey) == 79:
 				DATA[name] = "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (addname,fullname,desc,location,coords,url,version,dnssec,nologs,namecoin,ip4addr,provname,provkey,provtxt)
 				print DATA[name]
-				fp = open("d0wns.csv",'a')
+				
 				writedata = "%s\n" % DATA[name]
 				fp.write(writedata)
 
