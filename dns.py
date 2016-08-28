@@ -28,7 +28,7 @@ except:
 
 try:
 	DATA = {}
-	head = "Name,Full name,Description,Location,Coordinates,URL,Version,DNSSEC validation,No logs,Namecoin,Resolver address,Provider name,Provider public key,Provider public key TXT record"
+	head = "Name,Full name,Description,Location,Coordinates,URL,Version,DNSSEC validation,No logs,Namecoin,Resolver address,Provider name,Provider public key,Provider public key TXT record\n"
 	fp = open("d0wns.csv",'a')
 	fp.write(head)
 	with open('dns.txt', 'rb') as csvfile:
